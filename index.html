@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GDGC Member Showcase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash" class="splash">
+    <div class="splash-inner">
+      <div class="splash-logo-circle">
+        <span class="dot dot-blue"></span>
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <h1 class="splash-title">GDGC</h1>
+      <p class="splash-subtitle">Member Profile Showcase</p>
+      <div class="splash-loader">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app hidden">
+    <header class="app-header">
+      <div class="header-top">
+        <div>
+          <h1>GDGC Member Profiles</h1>
+          <p>Discover the core team behind our developer community.</p>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          🌙
+        </button>
+      </div>
+
+      <div class="header-controls">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name or bio..."
+          />
+          <span class="search-icon">🔍</span>
+        </div>
+        <div class="filters">
+          <select id="roleFilter">
+            <option value="">All roles</option>
+          </select>
+          <select id="skillFilter">
+            <option value="">All skills</option>
+          </select>
+          <select id="locationFilter">
+            <option value="">All locations</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <section class="status-section">
+      <div id="loading" class="status hidden">Loading members...</div>
+      <div id="error" class="status error hidden">
+        Could not load members. Retrying...
+      </div>
+      <div id="empty" class="status hidden">
+        No members match your search/filter.
+      </div>
+    </section>
+
+    <main id="memberGrid" class="member-grid hidden">
+      <!-- Cards rendered by script.js -->
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
